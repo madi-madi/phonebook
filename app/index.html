@@ -1,0 +1,49 @@
+<script type="text/javascript" src="vue.js"></script>
+<link href="https://unpkg.com/todomvc-app-css@2.1.0/index.css" rel="stylesheet"/>
+
+
+<section class="todoapp">
+  <header class="header">
+    <h1>Ibrahim</h1>
+    <input class="new-todo"
+      autocomplete="off"
+      placeholder="What needs to be done?">
+  </header>
+  <section class="main" >
+    <input class="toggle-all" id="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+    
+    <ul class="todo-list">
+      <li class="todo" v-for="todo in todos" :class="{completed:todo.completed}">
+        <div class="view">
+          <input class="toggle" type="checkbox" v-model="todo.completed">
+          <label>{{todo.title}}</label>
+          <button class="destroy"></button>
+        </div>
+        <input class="edit" type="text">
+      </li>
+    </ul>
+
+  </section>
+    <figure>
+      <img src="forsanicon.png">
+    </figure>
+    Test
+  <script type="text/javascript">
+  	
+  	new Vue({
+
+  			el: '.todoapp',
+
+  			data:{
+
+  				todos:[
+
+  					{title: 'Test1' , completed:true},
+  					{title: 'Test1' , completed:true}
+  				],
+  			}
+
+
+  		});
+  </script>
